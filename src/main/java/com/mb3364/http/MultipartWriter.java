@@ -23,11 +23,6 @@ public class MultipartWriter {
     private String boundary;
     private String charset;
 
-    public static void write(HttpURLConnection urlConnection, RequestParams requestParams) throws IOException {
-        MultipartWriter mpw = new MultipartWriter(urlConnection, requestParams);
-        mpw.writeParts();
-    }
-
     private MultipartWriter(HttpURLConnection urlConnection, RequestParams requestParams) throws IOException {
         this.requestParams = requestParams;
         this.outputStream = urlConnection.getOutputStream();
@@ -43,6 +38,15 @@ public class MultipartWriter {
         try {
             writer = new PrintWriter(new OutputStreamWriter(outputStream, charset), true);
         } catch (UnsupportedEncodingException ignored) {/* Will always succeed. */}
+    }
+
+    public static void write(HttpURLConnection urlConnection, RequestParams requestParams) throws IOException {
+        MultipartWriter mpw = new MultipartWriter(urlConnection, requestParams);
+        mpw.writeParts();
+    }
+
+    private static boolean charsetSupported(String name) {
+        return Charset.availableCharsets().keySet().contains(name);
     }
 
     private void writeParts() throws IOException {
@@ -81,9 +85,5 @@ public class MultipartWriter {
         outputStream.flush();
         writer.append(EOL);
         writer.flush();
-    }
-
-    private static boolean charsetSupported(String name) {
-        return Charset.availableCharsets().keySet().contains(name);
     }
 }

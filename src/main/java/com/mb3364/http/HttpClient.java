@@ -302,10 +302,10 @@ public abstract class HttpClient {
     }
 
     /**
-     * Gets the current value of the Follow Redirects option. If <code>true</code>, all requests
+     * Gets the current value of the Follow Redirects option. If {@code true}, all requests
      * will follow 3xx redirect responses.
      *
-     * @return <code>true</code> if requests will follow redirect codes automatically, <code>false</code> otherwise
+     * @return <code>true</code> if requests will follow redirect codes automatically, {@code false} otherwise
      * @see #setFollowRedirects(boolean)
      */
     public boolean getFollowRedirects() {
@@ -315,7 +315,7 @@ public abstract class HttpClient {
     /**
      * Set whether requests should follow 3xx redirects automatically.
      *
-     * @param followRedirects <code>true</code> to follow redirects, <code>false</code> otherwise
+     * @param followRedirects <code>true</code> to follow redirects, {@code false} otherwise
      * @see #getFollowRedirects()
      */
     public void setFollowRedirects(boolean followRedirects) {

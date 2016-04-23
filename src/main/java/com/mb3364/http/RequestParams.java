@@ -55,7 +55,7 @@ public class RequestParams {
      * Check if this object contains a parameter with the specified key.
      *
      * @param key the parameter key to check
-     * @return <code>true</code> if parameter exists, <code>false</code> otherwise
+     * @return <code>true</code> if parameter exists, {@code false} otherwise
      */
     public boolean containsKey(String key) {
         return stringParams.containsKey(key) || fileParams.containsKey(key);
@@ -72,7 +72,7 @@ public class RequestParams {
     }
 
     /**
-     * Set a new <code>short</code> parameter or overwrite an existing one.
+     * Set a new {@code short} parameter or overwrite an existing one.
      *
      * @param key   the parameter key
      * @param value the parameter value
@@ -82,7 +82,7 @@ public class RequestParams {
     }
 
     /**
-     * Set a new <code>int</code> parameter or overwrite an existing one.
+     * Set a new {@code int} parameter or overwrite an existing one.
      *
      * @param key   the parameter key
      * @param value the parameter value
@@ -92,7 +92,7 @@ public class RequestParams {
     }
 
     /**
-     * Set a new <code>double</code> parameter or overwrite an existing one.
+     * Set a new {@code double} parameter or overwrite an existing one.
      *
      * @param key   the parameter key
      * @param value the parameter value
@@ -102,7 +102,7 @@ public class RequestParams {
     }
 
     /**
-     * Set a new <code>float</code> parameter or overwrite an existing one.
+     * Set a new {@code float} parameter or overwrite an existing one.
      *
      * @param key   the parameter key
      * @param value the parameter value
@@ -112,7 +112,7 @@ public class RequestParams {
     }
 
     /**
-     * Set a new <code>long</code> parameter or overwrite an existing one.
+     * Set a new {@code long} parameter or overwrite an existing one.
      *
      * @param key   the parameter key
      * @param value the parameter value
@@ -122,7 +122,7 @@ public class RequestParams {
     }
 
     /**
-     * Set a new <code>boolean</code> parameter or overwrite an existing one.
+     * Set a new {@code boolean} parameter or overwrite an existing one.
      *
      * @param key   the parameter key
      * @param value the parameter value
@@ -132,7 +132,7 @@ public class RequestParams {
     }
 
     /**
-     * Set a new <code>char</code> parameter or overwrite an existing one.
+     * Set a new {@code char} parameter or overwrite an existing one.
      *
      * @param key   the parameter key
      * @param value the parameter value
@@ -142,7 +142,7 @@ public class RequestParams {
     }
 
     /**
-     * Copy an existing {@link Map<String, String>}'s key-value pairs into this object.
+     * Copy an existing {@link Map}'s key-value pairs into this object.
      *
      * @param otherMap the Map to copy the key-value pairs from
      */
@@ -176,7 +176,7 @@ public class RequestParams {
      * Get an existing {@link File} value.
      *
      * @param key the parameter key
-     * @return the {@link File} value of the specifed parameter
+     * @return the {@link File} value of the specified parameter
      * @see #getString(String)
      * @see #remove(String)
      */
@@ -218,7 +218,7 @@ public class RequestParams {
     /**
      * Check if any {@link File} parameter's exist.
      *
-     * @return <code>true</code> if at least 1 {@link File} parameter exists, <code>false</code> otherwise
+     * @return {@code true} if at least 1 {@link File} parameter exists, {@code false} otherwise
      */
     public boolean hasFiles() {
         return fileParams.size() > 0;

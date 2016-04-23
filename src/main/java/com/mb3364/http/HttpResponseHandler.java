@@ -12,17 +12,16 @@ import java.util.Map;
  * when making the HTTP request and will return the content as a byte array. You may also inherit this
  * class if you want to handle the content in a unique way. For example: {@link FileHttpResponseHandler},
  * {@link StringHttpResponseHandler}.
- * <p />
  * Example:
  * <pre>
  * client.get(url, params, new HttpResponseHandler() {
  *     &#064;Override
- *     public void onSuccess(int statusCode, Map<String, List<String>> headers, byte[] content) {
+ *     public void onSuccess(int statusCode, Map&lt;String, List&lt;String&gt;&gt; headers, byte[] content) {
  *          // Request was successful
  *     }
  *
  *     &#064;Override
- *     public void onFailure(int statusCode, Map<String, List<String>> headers, byte[] content) {
+ *     public void onFailure(int statusCode, Map&lt;String, List&lt;String&gt; headers, byte[] content) {
  *          // Server responded with a status code 4xx or 5xx error
  *     }
  *
@@ -33,10 +32,9 @@ import java.util.Map;
  * });
  * </pre>
  *
+ * @author Matthew Bell
  * @see FileHttpResponseHandler
  * @see StringHttpResponseHandler
- *
- * @author Matthew Bell
  */
 public abstract class HttpResponseHandler {
 
@@ -69,8 +67,8 @@ public abstract class HttpResponseHandler {
      * overridden in an anonymous inner class.
      *
      * @param statusCode the HTTP status code of the response
-     * @param headers the HTTP response headers
-     * @param content the HTTP response content body
+     * @param headers    the HTTP response headers
+     * @param content    the HTTP response content body
      */
     public abstract void onSuccess(int statusCode, Map<String, List<String>> headers, byte[] content);
 
@@ -79,8 +77,8 @@ public abstract class HttpResponseHandler {
      * overridden in an anonymous inner class.
      *
      * @param statusCode the HTTP status code of the response
-     * @param headers the HTTP response headers
-     * @param content the HTTP response content body
+     * @param headers    the HTTP response headers
+     * @param content    the HTTP response content body
      */
     public abstract void onFailure(int statusCode, Map<String, List<String>> headers, byte[] content);
 
@@ -96,7 +94,7 @@ public abstract class HttpResponseHandler {
      * downloading large files or reading a lot of content.
      *
      * @param bytesReceived the number of bytes that have already been read
-     * @param totalBytes the total number of bytes that will be read
+     * @param totalBytes    the total number of bytes that will be read
      */
     public void onProgressChanged(long bytesReceived, long totalBytes) {
         // Default, do nothing.
@@ -107,7 +105,7 @@ public abstract class HttpResponseHandler {
      * read the content in a different way.
      *
      * @param inputStream the {@link InputStream} of the response body
-     * @param length the total length of the response body
+     * @param length      the total length of the response body
      * @return a byte array representing the content body
      * @throws IOException if an exception occurs while reading the content body
      */

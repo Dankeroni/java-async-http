@@ -8,17 +8,16 @@ import java.util.Map;
  * The response handler for the HTTP request when requesting a file download. This class is meant to
  * be used as an anonymous inner class when making the HTTP request and will return the content as a
  * {@link String} object.
- * <p />
  * Example:
  * <pre>
  * client.get(url, params, new FileHttpResponseHandler(file) {
  *     &#064;Override
- *     public void onSuccess(int statusCode, Map<String, List<String>> headers, String content) {
+ *     public void onSuccess(int statusCode, Map&lt;String, List&lt;String&gt;&gt; headers, String content) {
  *          // Request was successful
  *     }
  *
  *     &#064;Override
- *     public void onFailure(int statusCode, Map<String, List<String>> headers, String content) {
+ *     public void onFailure(int statusCode, Map&lt;String, List&lt;String&gt;&gt; headers, String content) {
  *          // Server responded with a status code 4xx or 5xx error
  *     }
  *
@@ -29,19 +28,18 @@ import java.util.Map;
  * });
  * </pre>
  *
+ * @author Matthew Bell
  * @see HttpResponseHandler
  * @see StringHttpResponseHandler
- *
- * @author Matthew Bell
  */
 public abstract class StringHttpResponseHandler extends HttpResponseHandler {
 
     public static String DEFAULT_CHARSET = "UTF-8";
 
     /**
-     * Returns the Content Charset from the <code>content-type</code> header field.
+     * Returns the Content Charset from the {@code content-type} header field.
      *
-     * @return the content CharSet of the resource that the URL references, or <code>null</code> if not known.
+     * @return the content CharSet of the resource that the URL references, or {@code null} if not known.
      */
     private static String extractContentCharset(Map<String, List<String>> headers) {
         List<String> contentTypes = headers.get("Content-Type");

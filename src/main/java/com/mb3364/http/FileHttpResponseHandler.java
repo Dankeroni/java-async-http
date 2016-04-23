@@ -11,7 +11,6 @@ import java.util.Map;
  * The response handler for the HTTP request when requesting a file download. This class is meant to
  * be used as an anonymous inner class when making the HTTP request and will return the content as a
  * {@link File} object.
- * <p />
  * Example:
  * <pre>
  * String url = "https://example.org/cool-file.zip";
@@ -20,12 +19,12 @@ import java.util.Map;
  *
  * client.get(url, params, new FileHttpResponseHandler(file) {
  *     &#064;Override
- *     public void onSuccess(int statusCode, Map<String, List<String>> headers, File content) {
+ *     public void onSuccess(int statusCode, Map&lt;String, List&lt;String&gt;&gt; headers, File content) {
  *          // Request was successful
  *     }
  *
  *     &#064;Override
- *     public void onFailure(int statusCode, Map<String, List<String>> headers, File content) {
+ *     public void onFailure(int statusCode, Map&lt;String, List&lt;String&gt;&gt; headers, File content) {
  *          // Server responded with a status code 4xx or 5xx error
  *     }
  *
@@ -42,10 +41,9 @@ import java.util.Map;
  * });
  * </pre>
  *
+ * @author Matthew Bell
  * @see HttpResponseHandler
  * @see StringHttpResponseHandler
- *
- * @author Matthew Bell
  */
 public abstract class FileHttpResponseHandler extends HttpResponseHandler {
 
@@ -77,8 +75,8 @@ public abstract class FileHttpResponseHandler extends HttpResponseHandler {
      * Reads the body content and writes it to the specified file.
      *
      * @param inputStream the {@link InputStream} of the response body
-     * @param length the total length of the response body
-     * @return <code>null</code> since the content was written to the file
+     * @param length      the total length of the response body
+     * @return {@code null} since the content was written to the file
      * @throws IOException if an error occurs while reading the content or writing the file
      */
     @Override
