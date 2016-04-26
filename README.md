@@ -1,4 +1,4 @@
-# Java Async HTTP Client
+# Java Async HTTP Client [![](https://jitpack.io/v/Dankeroni/java-async-http.svg)](https://jitpack.io/#Dankeroni/java-async-http)
 A simple, lightweight, asynchronous HTTP client built on top of Java's `HttpURLConnection`.
 
 Please feel free to report any issues.
